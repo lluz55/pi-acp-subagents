@@ -1,0 +1,13 @@
+{
+  "name": "pi-acp-subagents",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "External ACP subagents with real-time Pi UI",
+  "pi": { "extensions": ["./index.ts"] },
+  "scripts": { "test": "node --test tests/*.test.mjs" },
+  "dependencies": {
+    "@agentclientprotocol/codex-acp": "2.3.0",
+    "@agentclientprotocol/claude-agent-acp": "0.90.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "harnesses": {
+    "codex": { "env": { "CODEX_PATH": "/absolute/path/to/codex" } }
+  },
+  "agents": {
+    "reviewer-codex": {
+      "harness": "codex",
+      "description": "Review code and report actionable findings",
+      "instructions": "Review the requested scope. Report bugs with file locations and evidence. Do not edit files.",
+      "mode": "read-only",
+      "config": { "reasoning_effort": "high" },
+      "permissions": "ask"
+    },
+    "builder-opencode": {
+      "harness": "opencode",
+      "description": "Implement and test a bounded assignment",
+      "instructions": "Implement the supplied assignment and run the relevant checks. Report changed files and results.",
+      "timeoutSeconds": 1200
+    },
+    "reviewer-claude": {
+      "harness": "claude",
+      "description": "Review design and implementation",
+      "instructions": "Inspect the supplied scope. Explain concrete issues and tradeoffs. Do not edit files."
+    },
+    "builder-mcode": {
+      "harness": "mcode",
+      "description": "Implement and validate a bounded assignment",
+      "instructions": "Complete the supplied assignment, validate it, and report any remaining limitations."
+    }
+  }
+}
